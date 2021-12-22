@@ -1,11 +1,12 @@
-import TypingArea from "./TypingArea";
+// component
+import TypingArea from "./components/TypingArea";
 
 import "./App.css";
 
 function App() {
     return (
         <div className="App">
-            <TypingArea />
+            <TypingArea/>
         </div>
     );
 }
