@@ -9,7 +9,7 @@ import "./App.css";
 
 function App() {
     let [lessonNum, setLessonNum] = useState(1);
-
+    let [testToggle, setTestToggle] = useState(0);
     return (
         <div className="App">
             <Options lessonState={[lessonNum, setLessonNum]} />

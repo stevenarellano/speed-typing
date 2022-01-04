@@ -4,8 +4,12 @@ export default function Options({ lessonState }) {
     let [currentLessonNum, setLessonNum] = lessonState;
 
     function generateLesson(e) {
-        console.log(e.target);
-        console.log(currentLessonNum);
+        let newLessonNum = e.target.id.split("n")[1];
+        if (newLessonNum == currentLessonNum) {
+            return;
+        }
+        console.log(newLessonNum);
+        setLessonNum(newLessonNum);
     }
 
     function buildLessonList(numOfLessons) {
