@@ -39,9 +39,18 @@ export default function TypingArea({ lessonNum }) {
     function createTypingText(chars, numWords) {
         return cText(chars, numWords);
     }
-    let text = createTypingText(chars, NUM_WQRDS);
 
     // tracking typing
+
+    let text = createTypingText(chars, NUM_WQRDS);
+    useEffect(() => {
+        let text = createTypingText(chars, NUM_WQRDS);
+
+        setTypingInfo(new TypingInfo(text, new Timer()));
+        setFinished(false);
+        console.log("new");
+        console.log(typingInfo);
+    }, [lessonNum]);
 
     let [typingInfo, setTypingInfo] = useState(
         new TypingInfo(text, new Timer())
@@ -52,7 +61,15 @@ export default function TypingArea({ lessonNum }) {
             return;
         }
         typingInfo.registerKeydown(e);
-        setTypingInfo({ ...typingInfo });
+        console.log("gets here");
+        // create brand new class
+        let newTypingInfo = new TypingInfo(typingInfo.toType, new Timer());
+        newTypingInfo.typed = typingInfo.typed;
+        newTypingInfo.mistakes = typingInfo.mistakes;
+        newTypingInfo.currentWrong = typingInfo.currentWrong;
+        newTypingInfo.timer = typingInfo.timer;
+        setTypingInfo(newTypingInfo);
+        console.log(typingInfo);
         if (typingInfo.toType.length === 0) {
             window.removeEventListener("keydown", keyDownE);
             triggerEnd();
@@ -63,7 +80,6 @@ export default function TypingArea({ lessonNum }) {
     let [finished, setFinished] = useState(false);
     function triggerEnd() {
         setFinished(true);
-        console.log("all done");
     }
     let typingBody = finished ? (
         <>

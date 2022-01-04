@@ -19,11 +19,7 @@ function App() {
                 lessonState={[lessonNum, setLessonNum]}
             />
             <Guide lessonNum={lessonNum} />
-            {testToggle ? (
-                <TypingArea lessonNum={lessonNum} />
-            ) : (
-                <Start testToggleState={[testToggle, setTestToggle]} />
-            )}
+            <TypingArea lessonNum={lessonNum} />
         </div>
     );
 }
