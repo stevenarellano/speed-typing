@@ -3,9 +3,12 @@ import "./TypingArea.css";
 // variables
 import { charBank } from "../assets/charBank";
 import { useState, useEffect } from "react";
-import { timerKeydown } from "../assets/typing";
+import { TypingInfo, Timer, includesBadKey } from "../assets/typing";
 
 export default function TypingArea({ lessonNum }) {
+    // constants
+    const NUM_WQRDS = 40;
+
     // creating the text area
     function rmStringDuplicates(str) {
         return Array.from(new Set(str)).join("");
@@ -32,28 +35,39 @@ export default function TypingArea({ lessonNum }) {
 
         return lst.join(" ");
     }
-    let text = cText(chars, 40);
+    let text = cText(chars, NUM_WQRDS);
 
     // tracking typing
-    let keyDown = "";
-    let [timer, setTimer] = useState({
-        startTime: 0,
-        endTime: 0,
-        timeElapsed: 0,
-    });
 
-    function timerEvent(e) {
-        setTimer(timerKeydown(e, timer));
+    let [typingInfo, setTypingInfo] = useState(
+        new TypingInfo(text, new Timer())
+    );
+
+    function keyDownE(e) {
+        if (includesBadKey(e)) {
+            return;
+        }
+        console.log(typingInfo);
+        typingInfo.registerKeydown(e);
+        setTypingInfo({ ...typingInfo });
+        console.log(typingInfo.typed);
+        console.log(typingInfo.toType);
     }
 
     // Add event listeners
     useEffect(() => {
-        window.addEventListener("keydown", timerEvent);
+        window.addEventListener("keydown", keyDownE);
+
         // Remove event listeners on cleanup
         return () => {
-            window.removeEventListener("keydown", timerEvent);
+            window.removeEventListener("keydown", keyDownE);
         };
     }, []); // Empty array ensures that effect is only run on mount and unmount
 
-    return <div className="typing">{text}</div>;
+    return (
+        <div className="typing">
+            <div className="typed typing-content">{typingInfo.typed}</div>
+            <div className="toType  typing-content">{typingInfo.toType}</div>
+        </div>
+    );
 }
