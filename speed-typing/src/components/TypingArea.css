@@ -36,11 +36,11 @@
     justify-content: center;
 }
 
-.wrong {
+.wrong-keydown {
     background-color: red !important;
 }
 
-.wrong > * {
+.wrong-keydown > * {
     background-color: red !important;
 }
 

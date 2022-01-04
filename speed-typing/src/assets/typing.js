@@ -4,6 +4,7 @@ class TypingInfo {
         this.timer = timer;
         this.typed = "";
         this.mistakes = 0;
+        this.currentWrong = false;
     }
 
     _getNextToType() {
@@ -25,15 +26,38 @@ class TypingInfo {
         }
     }
 
+    _addWrongClass() {
+        let typingAreaClasses =
+            document.getElementById("typing-container").classList;
+        if (!typingAreaClasses.contains("wrong-keydown")) {
+            typingAreaClasses.add("wrong-keydown");
+            console.log(typingAreaClasses);
+        }
+    }
+
+    _removeWrongClass() {
+        let typingAreaClasses =
+            document.getElementById("typing-container").classList;
+        if (typingAreaClasses.contains("wrong-keydown")) {
+            typingAreaClasses.remove("wrong-keydown");
+        }
+    }
+
     registerKeydown(e) {
         let firstChar = this.toType.charAt(0);
         if (e.key === firstChar) {
+            if (this.currentWrong) {
+                this.currentWrong = false;
+                this._removeWrongClass();
+            }
             let nextToType = this._getNextToType();
             this._timerControl(nextToType);
 
             this.typed = this.typed + firstChar;
         } else {
             this.mistakes++;
+            this.currentWrong = true;
+            this._addWrongClass();
         }
     }
 }

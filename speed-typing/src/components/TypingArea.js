@@ -87,7 +87,7 @@ export default function TypingArea({ lessonNum }) {
     ) : (
         <>
             <div className="title"> please type what you see below</div>
-            <div id="typing-container" className="typing wrong">
+            <div id="typing-container" className="typing">
                 <div className="typed typing-content">{typingInfo.typed}</div>
                 <div className="toType  typing-content">
                     {typingInfo.toType}
