@@ -1,14 +1,15 @@
 import "./Options.css";
 
-export default function Options({ lessonState }) {
+export default function Options({ lessonState, testToggleState }) {
+    // imported states
     let [currentLessonNum, setLessonNum] = lessonState;
+    let [testToggle, setTestToggle] = testToggleState;
 
     function generateLesson(e) {
         let newLessonNum = e.target.id.split("n")[1];
         if (newLessonNum == currentLessonNum) {
             return;
         }
-        console.log(newLessonNum);
         setLessonNum(newLessonNum);
     }
 

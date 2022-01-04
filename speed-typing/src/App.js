@@ -13,7 +13,10 @@ function App() {
     let [testToggle, setTestToggle] = useState(0);
     return (
         <div className="App">
-            <Options lessonState={[lessonNum, setLessonNum]} />
+            <Options
+                testToggleState={[testToggle, setTestToggle]}
+                lessonState={[lessonNum, setLessonNum]}
+            />
             {testToggle ? (
                 <TypingArea lessonNum={lessonNum} />
             ) : (

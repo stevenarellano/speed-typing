@@ -6,7 +6,6 @@ export default function Start({ testToggleState }) {
     let [testToggle, setTestToggle] = testToggleState;
 
     function toggle(testToggle) {
-        console.log("hleo");
         testToggle ? setTestToggle(0) : setTestToggle(1);
     }
     return (

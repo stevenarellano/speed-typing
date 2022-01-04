@@ -4,6 +4,5 @@ export function removeActive() {
 }
 
 export function addActive(lessonNum) {
-    console.log("234");
     document.getElementById("lesson" + lessonNum).classList += "active-lesson";
 }
