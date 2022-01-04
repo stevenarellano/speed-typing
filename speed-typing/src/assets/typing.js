@@ -3,7 +3,7 @@ class TypingInfo {
         this.toType = toType;
         this.timer = timer;
         this.typed = "";
-        this.charsRight = 0;
+        this.mistakes = 0;
     }
 
     _getNextToType() {
@@ -32,8 +32,8 @@ class TypingInfo {
             this._timerControl(nextToType);
 
             this.typed = this.typed + firstChar;
-            this.charsRight++;
         } else {
+            this.mistakes++;
         }
     }
 }

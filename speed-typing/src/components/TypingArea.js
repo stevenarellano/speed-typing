@@ -7,7 +7,7 @@ import { TypingInfo, Timer, includesBadKey } from "../assets/typing";
 
 export default function TypingArea({ lessonNum }) {
     // constants
-    const NUM_WQRDS = 40;
+    const NUM_WQRDS = 1;
 
     // creating the text area
     function rmStringDuplicates(str) {
@@ -35,7 +35,11 @@ export default function TypingArea({ lessonNum }) {
 
         return lst.join(" ");
     }
-    let text = cText(chars, NUM_WQRDS);
+
+    function createTypingText(chars, numWords) {
+        return cText(chars, numWords);
+    }
+    let text = createTypingText(chars, NUM_WQRDS);
 
     // tracking typing
 
@@ -47,11 +51,54 @@ export default function TypingArea({ lessonNum }) {
         if (includesBadKey(e)) {
             return;
         }
-        console.log(typingInfo);
         typingInfo.registerKeydown(e);
         setTypingInfo({ ...typingInfo });
-        console.log(typingInfo.typed);
-        console.log(typingInfo.toType);
+        if (typingInfo.toType.length === 0) {
+            window.removeEventListener("keydown", keyDownE);
+            triggerEnd();
+        }
+    }
+
+    //  ending control
+    let [finished, setFinished] = useState(false);
+    function triggerEnd() {
+        setFinished(true);
+        console.log("all done");
+    }
+    let typingBody = finished ? (
+        <>
+            <div className="stats">
+                YOU FINISHED IN {typingInfo.timer.timeElapsed} SECONDS WITH{" "}
+                {typingInfo.mistakes} MISTAKES <br />
+                WPM:{" "}
+                {Math.round(NUM_WQRDS / (typingInfo.timer.timeElapsed / 60))}
+                <br />
+                ACCURACY:{" "}
+                {Math.round(
+                    Math.max(
+                        (typingInfo.typed.length - typingInfo.mistakes) /
+                            typingInfo.typed.length,
+                        0.01
+                    ) * 100
+                )}
+                %
+            </div>
+        </>
+    ) : (
+        <>
+            <div className="title"> please type what you see below</div>
+            <div id="typing-container" className="typing wrong">
+                <div className="typed typing-content">{typingInfo.typed}</div>
+                <div className="toType  typing-content">
+                    {typingInfo.toType}
+                </div>
+            </div>
+        </>
+    );
+
+    // restarting the texting
+    function restartTyping() {
+        window.location.reload(false);
     }
 
     // Add event listeners
@@ -65,9 +112,11 @@ export default function TypingArea({ lessonNum }) {
     }, []); // Empty array ensures that effect is only run on mount and unmount
 
     return (
-        <div className="typing">
-            <div className="typed typing-content">{typingInfo.typed}</div>
-            <div className="toType  typing-content">{typingInfo.toType}</div>
+        <div className="exercise-area">
+            {typingBody}
+            <div onClick={restartTyping} className="bottom-button">
+                RESTART
+            </div>
         </div>
     );
 }
