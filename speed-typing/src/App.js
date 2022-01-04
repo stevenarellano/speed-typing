@@ -1,6 +1,7 @@
 // component
 import TypingArea from "./components/TypingArea";
 import Options from "./components/Options";
+import Start from "./components/Start";
 
 import { useState } from "react";
 import { removeActive, addActive } from "./assets/classManipulation";
@@ -13,7 +14,11 @@ function App() {
     return (
         <div className="App">
             <Options lessonState={[lessonNum, setLessonNum]} />
-            <TypingArea lessonNum={lessonNum} />
+            {testToggle ? (
+                <TypingArea lessonNum={lessonNum} />
+            ) : (
+                <Start testToggleState={[testToggle, setTestToggle]} />
+            )}
         </div>
     );
 }
