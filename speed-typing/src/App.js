@@ -2,6 +2,7 @@
 import TypingArea from "./components/TypingArea";
 import Options from "./components/Options";
 import Start from "./components/Start";
+import Guide from "./components/Guide";
 
 import { useState } from "react";
 import { removeActive, addActive } from "./assets/classManipulation";
@@ -17,6 +18,7 @@ function App() {
                 testToggleState={[testToggle, setTestToggle]}
                 lessonState={[lessonNum, setLessonNum]}
             />
+            <Guide lessonNum={lessonNum} />
             {testToggle ? (
                 <TypingArea lessonNum={lessonNum} />
             ) : (
