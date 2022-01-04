@@ -1,29 +1,16 @@
 import "./TypingArea.css";
 
-export default function TypingArea() {
-    console.log("text");
+// variables
+import { charBank } from "../assets/charBank";
+
+export default function TypingArea({ lessonNum }) {
+    console.log(lessonNum);
 
     function rmStringDuplicates(str) {
-        return Array.from(new Set(x)).join("");
+        return Array.from(new Set(str)).join("");
     }
 
-    let charBank = {
-        1: "asdf",
-        2: "jkl;",
-        3: charBank[1] + charBank[2],
-        4: charBank[3] + "gh",
-        5: charBank[4] + "'",
-        6: charBank[5] + ':"',
-        7: charBank[6] + "qwert",
-        8: charBank[7] + "yuiop",
-        9: charBank[8] + "zxcvb",
-        10: charBank[9] + "nm,.?",
-        11: charBank[10] + "12345",
-        12: charBank[11] + "67890",
-        13: charBank[12] + "!@#$%^&*()_+-=",
-        14: charBank[13] + "<>/{}|[]\\",
-    };
-    let chars = charBank[1];
+    let chars = charBank[lessonNum];
 
     function randomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -36,11 +23,12 @@ export default function TypingArea() {
         for (j = 0; j < numWords; j++) {
             text = "";
             for (i = 0; i < randomInt(3, 5); i++) {
-                let upperCase = math.random();
+                let upperCase = Math.random() > 0.5 ? 1 : 0;
                 let newChar = chars.charAt(
                     Math.floor(Math.random() * chars.length)
                 );
-                text += upperCase ? newChar.toUpperCase : newChar;
+
+                text += upperCase ? newChar.toUpperCase() : newChar;
             }
             lst.push(text);
         }
