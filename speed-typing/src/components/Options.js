@@ -1,5 +1,5 @@
 import "./Options.css";
-import { FontAwesome } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 export default function Options({ lessonState, testToggleState }) {
     // imported states
@@ -35,12 +35,25 @@ export default function Options({ lessonState, testToggleState }) {
         });
     }
 
+    // css tings
+    function toggleLessonMenu() {
+        let optionsMenu = document.getElementById("lessons-container");
+        if (optionsMenu.classList.contains("lessons-open")) {
+            optionsMenu.classList.remove("lessons-open");
+            console.log(optionsMenu.classList);
+        } else {
+            optionsMenu.classList.add("lessons-open");
+            console.log(optionsMenu.classList);
+        }
+    }
+
     return (
-        <div className="option-container">
+        <div id="option-container">
             <div className="options-title">
-                <div>SELECT A LESSON</div>
+                <FaBars onClick={toggleLessonMenu} />{" "}
+                <div className="title-text">SELECT A LESSON</div>
             </div>
-            {buildLessonList(14)}
+            <div id="lessons-container">{buildLessonList(14)}</div>
         </div>
     );
 }
