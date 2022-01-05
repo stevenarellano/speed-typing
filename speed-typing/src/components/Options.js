@@ -1,4 +1,5 @@
 import "./Options.css";
+import { FontAwesome } from "react-icons/fa";
 
 export default function Options({ lessonState, testToggleState }) {
     // imported states
@@ -36,7 +37,9 @@ export default function Options({ lessonState, testToggleState }) {
 
     return (
         <div className="option-container">
-            <div>SELECT A LESSON</div>
+            <div className="options-title">
+                <div>SELECT A LESSON</div>
+            </div>
             {buildLessonList(14)}
         </div>
     );

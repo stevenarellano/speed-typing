@@ -68,11 +68,7 @@ export default function TypingArea({ lessonState, typingInfoState }) {
                 return;
             }
             typingInfo.registerKeydown(e);
-            // WE NEEKJFALK;DJFALK;SJFL;DSAFJSAD;LOFJASDL;FJASD;L
-            // FALKDSFJKSDA;FJADSLK
-            //FASJKFLDSJF;LKASDJFLA;S
-            //ASDLKFJDSAL;FJSDAL;FJSDA/
-            //ASFDLKJDSFLKSADJ;FLKDSJ;FLAK
+
             console.log(typingInfo);
             // create brand new class
             let newTypingInfo = returnNewTypingInfo(typingInfo);
@@ -88,7 +84,7 @@ export default function TypingArea({ lessonState, typingInfoState }) {
         return () => {
             window.removeEventListener("keydown", keyDownE);
         };
-    }, [lessonNum]); // Empty array ensures that effect is only run on mount and unmount
+    }, [lessonNum, typingInfo]); // Empty array ensures that effect is only run on mount and unmount
 
     return (
         <div className="exercise-area">
