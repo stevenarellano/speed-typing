@@ -2,13 +2,17 @@ import "./TypingArea.css";
 
 // variables
 import { charBank } from "../assets/charBank";
-import { useState, useEffect } from "react";
-import { TypingInfo, Timer, includesBadKey } from "../assets/typing";
+import { useState, useEffect, useLayoutEffect } from "react";
+import {
+    TypingInfo,
+    Timer,
+    includesBadKey,
+    returnNewTypingInfo,
+} from "../assets/typing";
 
 export default function TypingArea({ lessonNum }) {
     // constants
     const NUM_WQRDS = 1;
-
     // creating the text area
     function rmStringDuplicates(str) {
         return Array.from(new Set(str)).join("");
@@ -41,35 +45,40 @@ export default function TypingArea({ lessonNum }) {
     }
 
     // tracking typing
-
-    let text = createTypingText(chars, NUM_WQRDS);
-    useEffect(() => {
-        let text = createTypingText(chars, NUM_WQRDS);
-
-        setTypingInfo(new TypingInfo(text, new Timer()));
-        setFinished(false);
-        console.log("new");
-        console.log(typingInfo);
-    }, [lessonNum]);
+    let text;
+    if (!text) {
+        text = createTypingText(chars, NUM_WQRDS);
+    }
 
     let [typingInfo, setTypingInfo] = useState(
-        new TypingInfo(text, new Timer())
+        new TypingInfo(createTypingText(text, NUM_WQRDS), new Timer())
     );
+    console.log("outside");
+    console.log(typingInfo);
+
+    useLayoutEffect(() => {
+        text = createTypingText(chars, NUM_WQRDS);
+        setTypingInfo(
+            new TypingInfo(createTypingText(text, NUM_WQRDS), new Timer())
+        );
+        console.log(text);
+        console.log(typingInfo);
+    }, [lessonNum]);
 
     function keyDownE(e) {
         if (includesBadKey(e)) {
             return;
         }
         typingInfo.registerKeydown(e);
-        console.log("gets here");
-        // create brand new class
-        let newTypingInfo = new TypingInfo(typingInfo.toType, new Timer());
-        newTypingInfo.typed = typingInfo.typed;
-        newTypingInfo.mistakes = typingInfo.mistakes;
-        newTypingInfo.currentWrong = typingInfo.currentWrong;
-        newTypingInfo.timer = typingInfo.timer;
-        setTypingInfo(newTypingInfo);
+        // WE NEEKJFALK;DJFALK;SJFL;DSAFJSAD;LOFJASDL;FJASD;L
+        // FALKDSFJKSDA;FJADSLK
+        //FASJKFLDSJF;LKASDJFLA;S
+        //ASDLKFJDSAL;FJSDAL;FJSDA/
+        //ASFDLKJDSFLKSADJ;FLKDSJ;FLAK
         console.log(typingInfo);
+        // create brand new class
+        let newTypingInfo = returnNewTypingInfo(typingInfo);
+        setTypingInfo(newTypingInfo);
         if (typingInfo.toType.length === 0) {
             window.removeEventListener("keydown", keyDownE);
             triggerEnd();
@@ -118,14 +127,14 @@ export default function TypingArea({ lessonNum }) {
     }
 
     // Add event listeners
-    useEffect(() => {
+    useLayoutEffect(() => {
         window.addEventListener("keydown", keyDownE);
 
         // Remove event listeners on cleanup
         return () => {
             window.removeEventListener("keydown", keyDownE);
         };
-    }, []); // Empty array ensures that effect is only run on mount and unmount
+    }, [lessonNum]); // Empty array ensures that effect is only run on mount and unmount
 
     return (
         <div className="exercise-area">

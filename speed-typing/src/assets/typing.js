@@ -62,6 +62,15 @@ class TypingInfo {
     }
 }
 
+export function returnNewTypingInfo(oldTypingInfo) {
+    let newTypingInfo = new TypingInfo(oldTypingInfo.toType, new Timer());
+    newTypingInfo.typed = oldTypingInfo.typed;
+    newTypingInfo.mistakes = oldTypingInfo.mistakes;
+    newTypingInfo.currentWrong = oldTypingInfo.currentWrong;
+    newTypingInfo.timer = oldTypingInfo.timer;
+    return newTypingInfo;
+}
+
 class Timer {
     constructor() {
         this.startTime = 0;
