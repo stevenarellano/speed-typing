@@ -9,81 +9,12 @@ import {
     includesBadKey,
     returnNewTypingInfo,
 } from "../assets/typing";
+import { NUM_WQRDS } from "../assets/typing";
 
-export default function TypingArea({ lessonNum }) {
-    // constants
-    const NUM_WQRDS = 1;
-    // creating the text area
-    function rmStringDuplicates(str) {
-        return Array.from(new Set(str)).join("");
-    }
-    let chars = charBank[lessonNum];
-    function randomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-    function cText(chars, numWords) {
-        let lst = [];
-        let i, j, text;
-        for (j = 0; j < numWords; j++) {
-            text = "";
-            for (i = 0; i < randomInt(3, 5); i++) {
-                let upperCase = Math.random() > 0.5 ? 1 : 0;
-                let newChar = chars.charAt(
-                    Math.floor(Math.random() * chars.length)
-                );
-
-                text += upperCase ? newChar.toUpperCase() : newChar;
-            }
-            lst.push(text);
-        }
-
-        return lst.join(" ");
-    }
-
-    function createTypingText(chars, numWords) {
-        return cText(chars, numWords);
-    }
-
-    // tracking typing
-    let text;
-    if (!text) {
-        text = createTypingText(chars, NUM_WQRDS);
-    }
-
-    let [typingInfo, setTypingInfo] = useState(
-        new TypingInfo(createTypingText(text, NUM_WQRDS), new Timer())
-    );
-    console.log("outside");
-    console.log(typingInfo);
-
-    useLayoutEffect(() => {
-        text = createTypingText(chars, NUM_WQRDS);
-        setTypingInfo(
-            new TypingInfo(createTypingText(text, NUM_WQRDS), new Timer())
-        );
-        console.log(text);
-        console.log(typingInfo);
-    }, [lessonNum]);
-
-    function keyDownE(e) {
-        if (includesBadKey(e)) {
-            return;
-        }
-        typingInfo.registerKeydown(e);
-        // WE NEEKJFALK;DJFALK;SJFL;DSAFJSAD;LOFJASDL;FJASD;L
-        // FALKDSFJKSDA;FJADSLK
-        //FASJKFLDSJF;LKASDJFLA;S
-        //ASDLKFJDSAL;FJSDAL;FJSDA/
-        //ASFDLKJDSFLKSADJ;FLKDSJ;FLAK
-        console.log(typingInfo);
-        // create brand new class
-        let newTypingInfo = returnNewTypingInfo(typingInfo);
-        setTypingInfo(newTypingInfo);
-        if (typingInfo.toType.length === 0) {
-            window.removeEventListener("keydown", keyDownE);
-            triggerEnd();
-        }
-    }
+export default function TypingArea({ lessonState, typingInfoState }) {
+    // imported states
+    let [lessonNum, setLessonNum] = lessonState;
+    let [typingInfo, setTypingInfo] = typingInfoState;
 
     //  ending control
     let [finished, setFinished] = useState(false);
@@ -126,8 +57,31 @@ export default function TypingArea({ lessonNum }) {
         window.location.reload(false);
     }
 
+    function keyDownE(e) {
+        console.log("hi");
+    }
+
     // Add event listeners
     useLayoutEffect(() => {
+        keyDownE = function (e) {
+            if (includesBadKey(e)) {
+                return;
+            }
+            typingInfo.registerKeydown(e);
+            // WE NEEKJFALK;DJFALK;SJFL;DSAFJSAD;LOFJASDL;FJASD;L
+            // FALKDSFJKSDA;FJADSLK
+            //FASJKFLDSJF;LKASDJFLA;S
+            //ASDLKFJDSAL;FJSDAL;FJSDA/
+            //ASFDLKJDSFLKSADJ;FLKDSJ;FLAK
+            console.log(typingInfo);
+            // create brand new class
+            let newTypingInfo = returnNewTypingInfo(typingInfo);
+            setTypingInfo(newTypingInfo);
+            if (typingInfo.toType.length === 0) {
+                window.removeEventListener("keydown", keyDownE);
+                triggerEnd();
+            }
+        };
         window.addEventListener("keydown", keyDownE);
 
         // Remove event listeners on cleanup

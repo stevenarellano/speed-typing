@@ -1,3 +1,32 @@
+// constants
+export const NUM_WQRDS = 1;
+// creating the text area
+function rmStringDuplicates(str) {
+    return Array.from(new Set(str)).join("");
+}
+
+function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+export function cText(chars, numWords) {
+    let lst = [];
+    let i, j, text;
+    for (j = 0; j < numWords; j++) {
+        text = "";
+        for (i = 0; i < randomInt(3, 5); i++) {
+            let upperCase = Math.random() > 0.5 ? 1 : 0;
+            let newChar = chars.charAt(
+                Math.floor(Math.random() * chars.length)
+            );
+
+            text += upperCase ? newChar.toUpperCase() : newChar;
+        }
+        lst.push(text);
+    }
+
+    return lst.join(" ");
+}
 class TypingInfo {
     constructor(toType, timer) {
         this.toType = toType;
