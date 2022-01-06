@@ -5,7 +5,7 @@
     --accent-primary: rgba(148, 148, 162, 0.5);
     --accent-secondary: rgba(148, 148, 162, 1);
     --red: rgba(149, 1, 1, 1);
-    --green: rgba(30, 81, 40, 1);
+    --green: rgb(31, 126, 50);
 }
 
 .App {
@@ -21,14 +21,27 @@
     letter-spacing: 0.5px;
 }
 
-@media only screen and (min-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
-}
-
 @media only screen and (min-width: 768px) {
-    body {
-        background-color: lightblue;
+    .App {
+        display: grid;
+        grid-template:
+            "options" "guide" "guide" 1fr
+            "options" "guide" "guide" 1fr
+            "options" "lesson" "lesson" 1fr
+            "options" "lesson" "lesson" 1fr;
+    }
+
+    #Options {
+        grid-area: options;
+        display: inline-block;
+    }
+    #Guide {
+        grid-area: guide;
+        display: inline-block;
+    }
+
+    #Lesson {
+        grid-area: lesson;
+        display: inline-block;
     }
 }

@@ -18,18 +18,19 @@ function App() {
         new TypingInfo(lessonText, new Timer())
     );
     useLayoutEffect(() => {
-        
         setTypingInfo(new TypingInfo(lessonText, new Timer()));
     }, [lessonNum]);
 
     return (
         <div className="App">
             <Options
+                id="Options"
                 testToggleState={[testToggle, setTestToggle]}
                 lessonState={[lessonNum, setLessonNum]}
             />
-            <Guide lessonNum={lessonNum} />
+            <Guide id="Guide" lessonNum={lessonNum} />
             <TypingArea
+                id="TypingArea"
                 typingInfoState={[typingInfo, setTypingInfo]}
                 lessonState={[lessonNum, setLessonNum]}
             />
