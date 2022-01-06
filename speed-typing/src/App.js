@@ -18,6 +18,7 @@ function App() {
         new TypingInfo(lessonText, new Timer())
     );
     useLayoutEffect(() => {
+        
         setTypingInfo(new TypingInfo(lessonText, new Timer()));
     }, [lessonNum]);
 

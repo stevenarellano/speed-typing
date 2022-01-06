@@ -88,6 +88,9 @@ export default function TypingArea({ lessonState, typingInfoState }) {
         };
     }, [lessonNum, typingInfo]); // Empty array ensures that effect is only run on mount and unmount
 
+    useLayoutEffect(() => {
+        setFinished(0);
+    }, [lessonNum]);
     return (
         <div id="lesson-area">
             {typingBody}

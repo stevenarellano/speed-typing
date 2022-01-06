@@ -15,9 +15,10 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
-
-    font-family: Helvetica, Arial, sans-serif;
+    gap: 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 18px;
+    letter-spacing: 0.5px;
 }
 
 @media only screen and (min-width: 600px) {
