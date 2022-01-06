@@ -10,22 +10,21 @@
         "foot" auto;
     color: var(--text-primary);
 
-    border: 2px solid var(--accent-secondary);
+    border: 2px solid var(--text-primary);
     border-radius: 0.75rem;
 }
 
 .title {
     grid-area: header;
-    padding: 0px;
-    margin-bottom: 5px;
+    padding: 0px 0px 1px 0px;
 }
 
 #typing-container {
     grid-area: typing-area;
-    padding: 5px;
-    border: solid 2px var(--accent-primary);
-    background-color: var(--accent-secondary);
+    padding: 7px;
+    background-color: var(--bg-primary);
     font-size: 18px;
+    border: 2px solid var(--text-primary);
     letter-spacing: 2px;
     border-bottom: none;
 }
@@ -38,6 +37,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 0 0 0.75rem 0.75rem;
+    border: solid 1px var(--text-primary);
 }
 
 .wrong-keydown {
@@ -59,10 +60,11 @@
 
 .stats {
     grid-area: typing-area;
-    background-color: aqua;
-    text-align: center;
+    background-color: var(--bg-primary);
+    text-align: left;
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+    border: solid 1px var(--text-primary);
     font-size: small;
 }

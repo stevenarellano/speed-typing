@@ -10,7 +10,7 @@
     align-items: center;
     justify-self: start;
 
-    border: 2px solid var(--accent-secondary);
+    border: 2px solid var(--text-primary);
     border-radius: 0.75rem;
 }
 .guide-image {

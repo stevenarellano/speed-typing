@@ -23,9 +23,11 @@ export default function TypingArea({ lessonState, typingInfoState }) {
     }
     let typingBody = finished ? (
         <>
+            <div className="title"> STATS</div>
             <div className="stats">
-                YOU FINISHED IN {typingInfo.timer.timeElapsed} SECONDS WITH{" "}
-                {typingInfo.mistakes} MISTAKES <br />
+                Time Elapsed: {typingInfo.timer.timeElapsed}s<br />
+                MISTAKES MADE: {typingInfo.mistakes}
+                <br />
                 WPM:{" "}
                 {Math.round(NUM_WQRDS / (typingInfo.timer.timeElapsed / 60))}
                 <br />
