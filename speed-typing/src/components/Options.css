@@ -4,6 +4,7 @@
     color: var(--text-secondary);
 
     width: 100%;
+
 }
 
 .active-lesson {
@@ -38,7 +39,7 @@
 }
 
 .title-text {
-    padding-left: 5px;
+    padding-left: 10px;
 }
 
 .title-bars {

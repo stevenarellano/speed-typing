@@ -3,7 +3,7 @@
     --text-primary: rgba(243, 243, 250, 255);
     --text-secondary: rgba(129, 135, 158, 255);
     --accent-primary: rgba(148, 148, 162, 0.5);
-    --accent-secondary: rgba(148, 148, 162, 0.5);
+    --accent-secondary: rgba(148, 148, 162, 1);
     --red: rgba(149, 1, 1, 1);
     --green: rgba(30, 81, 40, 1);
 }
@@ -15,7 +15,9 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
+
     font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
 }
 
 @media only screen and (min-width: 600px) {

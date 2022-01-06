@@ -42,8 +42,8 @@ export default function TypingArea({ lessonState, typingInfoState }) {
         </>
     ) : (
         <>
-            <div className="title"> please type what you see below</div>
-            <div id="typing-container" className="typing">
+            <div className="title"> Please Type The Letters Below</div>
+            <div id="typing-container" className="">
                 <div className="typed typing-content">{typingInfo.typed}</div>
                 <div className="toType  typing-content">
                     {typingInfo.toType}
@@ -87,7 +87,7 @@ export default function TypingArea({ lessonState, typingInfoState }) {
     }, [lessonNum, typingInfo]); // Empty array ensures that effect is only run on mount and unmount
 
     return (
-        <div className="exercise-area">
+        <div id="lesson-area">
             {typingBody}
             <div onClick={restartTyping} className="bottom-button">
                 RESTART

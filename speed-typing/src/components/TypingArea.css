@@ -1,35 +1,39 @@
-.exercise-area {
-    margin: 0 auto;
+#lesson-area {
+    width: 80%;
     padding: 10px;
-    border: 2px solid black;
-    background-color: yellow;
+    background-color: var(--bg-primary);
 
     display: grid;
     grid-template:
         "header" auto
         "typing-area" 1fr
-        "foot" 1fr;
-    gap: 5px;
+        "foot" auto;
+    color: var(--text-primary);
+
+    border: 2px solid var(--accent-secondary);
+    border-radius: 0.75rem;
 }
 
 .title {
     grid-area: header;
-    background-color: orange;
-    padding: 10px;
+    padding: 0px;
+    margin-bottom: 5px;
 }
 
-.typing {
+#typing-container {
     grid-area: typing-area;
-    padding: 10px;
-    background-color: green;
-    border: 1px solid black;
+    padding: 5px;
+    border: solid 2px var(--accent-primary);
+    background-color: var(--accent-secondary);
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-bottom: none;
 }
 
 .bottom-button {
     grid-area: foot;
-    margin: 20px;
-    background-color: lightblue;
-    border: 2px solid black;
+    background-color: var(--accent-primary);
+    border-top: none;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -37,11 +41,11 @@
 }
 
 .wrong-keydown {
-    background-color: red !important;
+    background-color: var(--red) !important;
 }
 
 .wrong-keydown > * {
-    background-color: red !important;
+    background-color: var(--red) !important;
 }
 
 .typing-content {
@@ -49,8 +53,8 @@
 }
 
 .typed {
-    filter: brightness(70%);
-    background-color: grey;
+    filter: brightness(80%);
+    background-color: var(--green);
 }
 
 .stats {
