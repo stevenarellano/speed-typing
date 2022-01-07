@@ -15,7 +15,7 @@ export function cText(chars, numWords) {
     for (j = 0; j < numWords; j++) {
         text = "";
         for (i = 0; i < randomInt(3, 5); i++) {
-            let upperCase = Math.random() > 0.5 ? 1 : 0;
+            let upperCase = Math.random() > 0.9 ? 1 : 0;
             let newChar = chars.charAt(
                 Math.floor(Math.random() * chars.length)
             );
