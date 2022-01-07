@@ -1,5 +1,5 @@
 // constants
-export const NUM_WQRDS = 2;
+export const NUM_WQRDS = 40;
 // creating the text area
 function rmStringDuplicates(str) {
     return Array.from(new Set(str)).join("");

@@ -6,42 +6,38 @@
     --accent-secondary: rgba(148, 148, 162, 1);
     --red: rgba(149, 1, 1, 1);
     --green: rgb(31, 126, 50);
+
+    background-color: var(--bg-primary);
 }
 
 .App {
     background-color: var(--bg-primary);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    gap: 20px;
+    height: 100%;
+
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 18px;
     letter-spacing: 0.5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .App {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 20px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
     .App {
         display: grid;
         grid-template:
-            "options" "guide" "guide" 1fr
-            "options" "guide" "guide" 1fr
-            "options" "lesson" "lesson" 1fr
-            "options" "lesson" "lesson" 1fr;
-    }
+            "opt guide" 1fr
+            "opt lesson" 1fr / 20% 1fr;
+        gap: 20px;
+        box-sizing: content-box;
+        padding: 30px;
 
-    #Options {
-        grid-area: options;
-        display: inline-block;
-    }
-    #Guide {
-        grid-area: guide;
-        display: inline-block;
-    }
-
-    #Lesson {
-        grid-area: lesson;
-        display: inline-block;
     }
 }

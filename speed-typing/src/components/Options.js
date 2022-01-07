@@ -50,7 +50,7 @@ export default function Options({ lessonState, testToggleState }) {
     return (
         <div id="option-container">
             <div className="options-title">
-                <FaBars onClick={toggleLessonMenu} />{" "}
+                <FaBars className="title-bars" onClick={toggleLessonMenu} />{" "}
                 <div className="title-text">SELECT A LESSON</div>
             </div>
             <div id="lessons-container">{buildLessonList(14)}</div>

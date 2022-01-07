@@ -4,6 +4,7 @@
     color: var(--text-secondary);
 
     width: 100%;
+
     border-bottom: solid 2px var(--text-primary);
 }
 
@@ -46,14 +47,28 @@
     display: inline-block;
 }
 
-@media only screen and (min-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
+@media only screen and (max-width: 768px) {
 }
 
 @media only screen and (min-width: 768px) {
-    body {
-        background-color: lightblue;
+    #option-container {
+        grid-area: opt;
+        border: solid var(--text-primary) 2px;
+        border-radius: 0.75rem;
+        height: fit-content;
+    }
+    #lessons-container {
+        max-height: 100%;
+    }
+
+    .title-bars {
+        display: none;
+    }
+
+    .title-text {
+        padding: 0;
+    }
+    .options-title {
+        border-bottom: solid 1px var(--text-primary);
     }
 }

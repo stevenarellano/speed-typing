@@ -23,14 +23,13 @@
     color: var(--text-primary);
     padding-bottom: 2px;
 }
-@media only screen and (min-width: 600px) {
-    body {
-        background-color: lightblue;
-    }
+@media only screen and (max-width: 768px) {
 }
 
 @media only screen and (min-width: 768px) {
-    body {
-        background-color: lightblue;
+    #guide-container {
+        grid-area: guide;
+        margin:  auto;
+        width: 50%;
     }
 }
