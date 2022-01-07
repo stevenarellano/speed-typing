@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/%7Bspeed-typing%7D/static/css/main.1d3edfe6.css",
-    "main.js": "/%7Bspeed-typing%7D/static/js/main.8365e880.js",
-    "static/js/787.4fbe02f1.chunk.js": "/%7Bspeed-typing%7D/static/js/787.4fbe02f1.chunk.js",
-    "static/media/lesson5.gif": "/%7Bspeed-typing%7D/static/media/lesson5.d6f2d4470150678caa91.gif",
-    "static/media/lesson12.gif": "/%7Bspeed-typing%7D/static/media/lesson12.822ac6cbb5ec69326d09.gif",
-    "static/media/lesson11.gif": "/%7Bspeed-typing%7D/static/media/lesson11.8bc35fb9930eebcd22e0.gif",
-    "static/media/lesson9.gif": "/%7Bspeed-typing%7D/static/media/lesson9.707f8cacd0704aec2c7c.gif",
-    "static/media/lesson8.gif": "/%7Bspeed-typing%7D/static/media/lesson8.b612692c5a22fddc2d32.gif",
-    "static/media/lesson10.gif": "/%7Bspeed-typing%7D/static/media/lesson10.35bc7a8b677a6d2f47ad.gif",
-    "static/media/lesson7.gif": "/%7Bspeed-typing%7D/static/media/lesson7.a01f2148a6545b1f2bd9.gif",
-    "static/media/lesson3.gif": "/%7Bspeed-typing%7D/static/media/lesson3.5efb2d98f1d5982e23f1.gif",
-    "static/media/lesson2.gif": "/%7Bspeed-typing%7D/static/media/lesson2.3bf7a9a5928bb21cd0cc.gif",
-    "static/media/lesson6.gif": "/%7Bspeed-typing%7D/static/media/lesson6.87ea2218f451dba5f0a0.gif",
-    "static/media/lesson4.gif": "/%7Bspeed-typing%7D/static/media/lesson4.f67b2efbe9202d1c7246.gif",
-    "static/media/lesson1.gif": "/%7Bspeed-typing%7D/static/media/lesson1.57f407b5add9f17be7fc.gif",
-    "static/media/lesson14.gif": "/%7Bspeed-typing%7D/static/media/lesson14.6ae011041849b7e11432.gif",
-    "static/media/lesson13.gif": "/%7Bspeed-typing%7D/static/media/lesson13.f929cd83a00474559f48.gif",
-    "static/media/lesson15.gif": "/%7Bspeed-typing%7D/static/media/lesson15.0d41e55a07093481fdae.gif",
-    "index.html": "/%7Bspeed-typing%7D/index.html",
-    "main.1d3edfe6.css.map": "/%7Bspeed-typing%7D/static/css/main.1d3edfe6.css.map",
-    "main.8365e880.js.map": "/%7Bspeed-typing%7D/static/js/main.8365e880.js.map",
-    "787.4fbe02f1.chunk.js.map": "/%7Bspeed-typing%7D/static/js/787.4fbe02f1.chunk.js.map"
+    "main.css": "/speed-typing/static/css/main.1d3edfe6.css",
+    "main.js": "/speed-typing/static/js/main.869f073e.js",
+    "static/js/787.4fbe02f1.chunk.js": "/speed-typing/static/js/787.4fbe02f1.chunk.js",
+    "static/media/lesson5.gif": "/speed-typing/static/media/lesson5.d6f2d4470150678caa91.gif",
+    "static/media/lesson12.gif": "/speed-typing/static/media/lesson12.822ac6cbb5ec69326d09.gif",
+    "static/media/lesson11.gif": "/speed-typing/static/media/lesson11.8bc35fb9930eebcd22e0.gif",
+    "static/media/lesson9.gif": "/speed-typing/static/media/lesson9.707f8cacd0704aec2c7c.gif",
+    "static/media/lesson8.gif": "/speed-typing/static/media/lesson8.b612692c5a22fddc2d32.gif",
+    "static/media/lesson10.gif": "/speed-typing/static/media/lesson10.35bc7a8b677a6d2f47ad.gif",
+    "static/media/lesson7.gif": "/speed-typing/static/media/lesson7.a01f2148a6545b1f2bd9.gif",
+    "static/media/lesson3.gif": "/speed-typing/static/media/lesson3.5efb2d98f1d5982e23f1.gif",
+    "static/media/lesson2.gif": "/speed-typing/static/media/lesson2.3bf7a9a5928bb21cd0cc.gif",
+    "static/media/lesson6.gif": "/speed-typing/static/media/lesson6.87ea2218f451dba5f0a0.gif",
+    "static/media/lesson4.gif": "/speed-typing/static/media/lesson4.f67b2efbe9202d1c7246.gif",
+    "static/media/lesson1.gif": "/speed-typing/static/media/lesson1.57f407b5add9f17be7fc.gif",
+    "static/media/lesson14.gif": "/speed-typing/static/media/lesson14.6ae011041849b7e11432.gif",
+    "static/media/lesson13.gif": "/speed-typing/static/media/lesson13.f929cd83a00474559f48.gif",
+    "static/media/lesson15.gif": "/speed-typing/static/media/lesson15.0d41e55a07093481fdae.gif",
+    "index.html": "/speed-typing/index.html",
+    "main.1d3edfe6.css.map": "/speed-typing/static/css/main.1d3edfe6.css.map",
+    "main.869f073e.js.map": "/speed-typing/static/js/main.869f073e.js.map",
+    "787.4fbe02f1.chunk.js.map": "/speed-typing/static/js/787.4fbe02f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1d3edfe6.css",
-    "static/js/main.8365e880.js"
+    "static/js/main.869f073e.js"
   ]
 }
