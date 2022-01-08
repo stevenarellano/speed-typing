@@ -37,6 +37,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+
     border-radius: 0 0 0.75rem 0.75rem;
     border: solid 1px var(--text-primary);
 }
@@ -76,7 +78,5 @@
     #lesson-area {
         grid-area: lesson;
         margin: auto;
-        
     }
-
 }

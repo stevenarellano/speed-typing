@@ -47,6 +47,10 @@
     display: inline-block;
 }
 
+.lesson-item {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 768px) {
 }
 
