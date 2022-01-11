@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/speed-typing/static/css/main.2bddaefd.css",
-    "main.js": "/speed-typing/static/js/main.ac376f28.js",
+    "main.css": "/speed-typing/static/css/main.4cc4ef44.css",
+    "main.js": "/speed-typing/static/js/main.0aefe081.js",
     "static/js/787.4fbe02f1.chunk.js": "/speed-typing/static/js/787.4fbe02f1.chunk.js",
     "static/media/lesson5.gif": "/speed-typing/static/media/lesson5.d6f2d4470150678caa91.gif",
     "static/media/lesson12.gif": "/speed-typing/static/media/lesson12.822ac6cbb5ec69326d09.gif",
@@ -19,12 +19,12 @@
     "static/media/lesson13.gif": "/speed-typing/static/media/lesson13.f929cd83a00474559f48.gif",
     "static/media/lesson15.gif": "/speed-typing/static/media/lesson15.0d41e55a07093481fdae.gif",
     "index.html": "/speed-typing/index.html",
-    "main.2bddaefd.css.map": "/speed-typing/static/css/main.2bddaefd.css.map",
-    "main.ac376f28.js.map": "/speed-typing/static/js/main.ac376f28.js.map",
+    "main.4cc4ef44.css.map": "/speed-typing/static/css/main.4cc4ef44.css.map",
+    "main.0aefe081.js.map": "/speed-typing/static/js/main.0aefe081.js.map",
     "787.4fbe02f1.chunk.js.map": "/speed-typing/static/js/787.4fbe02f1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2bddaefd.css",
-    "static/js/main.ac376f28.js"
+    "static/css/main.4cc4ef44.css",
+    "static/js/main.0aefe081.js"
   ]
 }

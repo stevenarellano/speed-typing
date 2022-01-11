@@ -24,8 +24,9 @@
     padding: 7px;
     background-color: var(--bg-primary);
     font-size: 18px;
+    font-weight: bold;
     border: 2px solid var(--text-primary);
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     border-bottom: none;
 }
 

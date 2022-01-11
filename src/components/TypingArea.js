@@ -11,10 +11,15 @@ import {
 } from "../assets/typing";
 import { NUM_WQRDS } from "../assets/typing";
 
-export default function TypingArea({ lessonState, typingInfoState }) {
+export default function TypingArea({
+    lessonState,
+    typingInfoState,
+    restartState,
+}) {
     // imported states
     let [lessonNum, setLessonNum] = lessonState;
     let [typingInfo, setTypingInfo] = typingInfoState;
+    let [restartToggle, setRestartToggle] = restartState;
 
     //  ending control
     let [finished, setFinished] = useState(false);
@@ -56,7 +61,7 @@ export default function TypingArea({ lessonState, typingInfoState }) {
 
     // restarting the texting
     function restartTyping() {
-        window.location.reload(false);
+        setRestartToggle(!restartToggle);
     }
 
     function keyDownE(e) {

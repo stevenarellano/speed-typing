@@ -12,27 +12,24 @@ import { charBank } from "./assets/charBank";
 
 function App() {
     let [lessonNum, setLessonNum] = useState(1);
-    let [testToggle, setTestToggle] = useState(0);
+    let [restartToggle, setRestartToggle] = useState(0);
     let lessonText = cText(charBank[lessonNum], NUM_WQRDS);
     let [typingInfo, setTypingInfo] = useState(
         new TypingInfo(lessonText, new Timer())
     );
     useLayoutEffect(() => {
         setTypingInfo(new TypingInfo(lessonText, new Timer()));
-    }, [lessonNum]);
+    }, [lessonNum, restartToggle]);
 
     return (
         <div className="App">
-            <Options
-                id="Options"
-                testToggleState={[testToggle, setTestToggle]}
-                lessonState={[lessonNum, setLessonNum]}
-            />
+            <Options id="Options" lessonState={[lessonNum, setLessonNum]} />
             <Guide id="Guide" lessonNum={lessonNum} />
             <TypingArea
                 id="TypingArea"
                 typingInfoState={[typingInfo, setTypingInfo]}
                 lessonState={[lessonNum, setLessonNum]}
+                restartState={[restartToggle, setRestartToggle]}
             />
         </div>
     );
