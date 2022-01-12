@@ -62,6 +62,7 @@ export default function TypingArea({
     // restarting the texting
     function restartTyping() {
         setRestartToggle(!restartToggle);
+        setFinished(0);
     }
 
     function keyDownE(e) {
