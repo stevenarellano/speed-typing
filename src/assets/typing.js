@@ -65,7 +65,7 @@ class TypingInfo {
         }
     }
 
-    _removeWrongClass() {
+    removeWrongClass() {
         let typingAreaClasses =
             document.getElementById("typing-container").classList;
         if (typingAreaClasses.contains("wrong-keydown")) {
@@ -78,7 +78,7 @@ class TypingInfo {
         if (e.key === firstChar) {
             if (this.currentWrong) {
                 this.currentWrong = false;
-                this._removeWrongClass();
+                this.removeWrongClass();
             }
             let nextToType = this._getNextToType();
             this._timerControl(nextToType);
