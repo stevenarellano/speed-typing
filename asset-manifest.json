@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/speed-typing/static/css/main.caa0b309.css",
+    "main.css": "/speed-typing/static/css/main.daac417b.css",
     "main.js": "/speed-typing/static/js/main.5c1c1dc9.js",
     "static/js/787.4fbe02f1.chunk.js": "/speed-typing/static/js/787.4fbe02f1.chunk.js",
     "static/media/lesson5.gif": "/speed-typing/static/media/lesson5.d6f2d4470150678caa91.gif",
@@ -19,12 +19,12 @@
     "static/media/lesson13.gif": "/speed-typing/static/media/lesson13.f929cd83a00474559f48.gif",
     "static/media/lesson15.gif": "/speed-typing/static/media/lesson15.0d41e55a07093481fdae.gif",
     "index.html": "/speed-typing/index.html",
-    "main.caa0b309.css.map": "/speed-typing/static/css/main.caa0b309.css.map",
+    "main.daac417b.css.map": "/speed-typing/static/css/main.daac417b.css.map",
     "main.5c1c1dc9.js.map": "/speed-typing/static/js/main.5c1c1dc9.js.map",
     "787.4fbe02f1.chunk.js.map": "/speed-typing/static/js/787.4fbe02f1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.caa0b309.css",
+    "static/css/main.daac417b.css",
     "static/js/main.5c1c1dc9.js"
   ]
 }
