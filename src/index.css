@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500&family=Michroma&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&family=Space+Grotesk:wght@300&display=swap');
 
 body {
 	margin: 0;
@@ -6,5 +6,5 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 * {
-	font-family: 'Raleway', 'Darker Grotesque', sans-serif !important;
+	font-family: 'Chivo Mono', monospace;
 }
