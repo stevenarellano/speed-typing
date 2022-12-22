@@ -1,43 +1,42 @@
 :root {
-    --bg-primary: rgba(38, 38, 54, 255);
-    --text-primary: rgba(243, 243, 250, 255);
-    --text-secondary: rgba(129, 135, 158, 255);
-    --accent-primary: rgba(148, 148, 162, 0.5);
-    --accent-secondary: rgba(148, 148, 162, 1);
-    --red: rgba(149, 1, 1, 1);
-    --green: rgb(31, 126, 50);
+	--bg-primary: #18191A;
+	--text-primary: rgba(243, 243, 250, 255);
+	--text-secondary: rgba(129, 135, 158, 255);
+	--accent-primary: rgba(148, 148, 162, 0.5);
+	--accent-secondary: rgba(148, 148, 162, 1);
+	--red: rgba(149, 1, 1, 1);
+	--green: rgb(31, 126, 50);
 
-    background-color: var(--bg-primary);
+	background-color: var(--bg-primary);
 }
 
 .App {
-    background-color: var(--bg-primary);
-    height: 100%;
+	background-color: var(--bg-primary);
+	height: 100%;
 
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 18px;
-    letter-spacing: 0.5px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 18px;
+	letter-spacing: 0.5px;
 }
 
 @media only screen and (max-width: 768px) {
-    .App {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-        gap: 20px;
-    }
+	.App {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: center;
+		gap: 20px;
+	}
 }
 
 @media only screen and (min-width: 768px) {
-    .App {
-        display: grid;
-        grid-template:
-            "opt guide" 1fr
-            "opt lesson" 1fr / 20% 1fr;
-        gap: 20px;
-        box-sizing: content-box;
-        padding: 30px;
-
-    }
+	.App {
+		display: grid;
+		grid-template:
+			'opt guide' 1fr
+			'opt lesson' 1fr / 20% 1fr;
+		gap: 20px;
+		box-sizing: content-box;
+		padding: 30px;
+	}
 }
