@@ -1,11 +1,9 @@
 // component
 import TypingArea from "./components/TypingArea";
 import Options from "./components/Options";
-import Start from "./components/Start";
 import Guide from "./components/Guide";
 
-import { useEffect, useLayoutEffect, useState } from "react";
-import { removeActive, addActive } from "./assets/classManipulation";
+import { useLayoutEffect, useState } from "react";
 import { cText, NUM_WQRDS, TypingInfo, Timer } from "./assets/typing";
 import "./App.css";
 import { charBank } from "./assets/charBank";

@@ -1,5 +1,5 @@
 :root {
-	--bg-primary: #18191A;
+	--bg-primary: #18191a;
 	--text-primary: rgba(243, 243, 250, 255);
 	--text-secondary: rgba(129, 135, 158, 255);
 	--accent-primary: rgba(148, 148, 162, 0.5);
@@ -14,7 +14,6 @@
 	background-color: var(--bg-primary);
 	height: 100%;
 
-	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-size: 18px;
 	letter-spacing: 0.5px;
 }
@@ -25,6 +24,7 @@
 		flex-direction: column;
 		justify-content: start;
 		align-items: center;
+		justify-content: center;
 		gap: 20px;
 	}
 }
