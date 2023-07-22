@@ -7,7 +7,7 @@ Play the game [here](https://stevenarellano.github.io/speed-typing/).
 
 ## Demo
 
-<video width="50%" controls src="assets/speed-typing-demo.mp4"></video>
+<video src="assets/speed-typing-demo.mp4"></video>
 
 ## Stack
 
